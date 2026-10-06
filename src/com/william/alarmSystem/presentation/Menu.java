@@ -98,12 +98,16 @@ public class Menu {
 
         if (isSystemArmed) {
             System.out.println(Colors.PURPLE+"Status: PÅ" +Colors.RESET);
-        } else System.out.println(Colors.PURPLE+"Status: AV"+Colors.RESET);
-        if (isSystemAlarming) {
-            System.out.println(Colors.RED + "Systemet larmar!" + Colors.RESET);
-        } else System.out.println(Colors.PURPLE+"Inga larm från systemet"+Colors.RESET);
-        System.out.println(Colors.PURPLE+"Sensorer: " + alarmSystem.getSensorList().size()+Colors.RESET);
-        System.out.println(Colors.PURPLE+"Aktiverade larm: " + alarmSystem.getTriggeredAlarms() +Colors.RESET);
+            if (isSystemAlarming) {
+                System.out.println(Colors.RED + "Systemet larmar!" + Colors.RESET);
+            } else System.out.println(Colors.PURPLE+"Inga larm från systemet"+Colors.RESET);
+            System.out.println(Colors.PURPLE+"Sensorer: " + alarmSystem.getSensorList().size()+Colors.RESET);
+            System.out.println(Colors.PURPLE+"Aktiverade larm: " + alarmSystem.getTriggeredAlarms() +Colors.RESET);
+        } else {
+            System.out.println(Colors.PURPLE+"Status: AV"+Colors.RESET);
+            System.out.println(Colors.PURPLE+"Larmstatus: " + alarmSystem.getTriggeredAlarms() + " sensorer utlösta"+Colors.RESET);
+            System.out.println(Colors.PURPLE+"Sensorer: " + alarmSystem.getSensorList().size()+Colors.RESET);
+        }
         System.out.println();
         System.out.println("""
                     1. Lägg till sensor
